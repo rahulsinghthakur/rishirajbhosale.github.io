@@ -15,9 +15,14 @@
     <link rel="stylesheet" href="src/css/sticky-footer-navbar.css">
     <link rel="stylesheet" href="src/css/select2.min.css">
     <link rel="stylesheet" href="src/css/select2-bootstrap.min.css">
+    <!-- for intr.js -->
+    <link rel="stylesheet" href="src/introjs.css">
+
 
     <!-- External JavaScript libraries -->
     <script src="src/js/libs/jquery-3.2.1.min.js"></script>
+    <!--for intr.js file -->
+    <script src="src/intro.js"></script>
     <script src="src/js/libs/select2.min.js"></script>
     <script src="src/js/libs/popper.min.js"></script>
     <script src="src/js/libs/bootstrap.min.js"></script>
@@ -55,6 +60,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/vz-risk/VCDB">Data Source</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" data-toggle="#" data-target="_blank" onclick="introJs().start();">Show Me</a>
                     </li>
                 </ul>
             </div>
@@ -97,21 +105,21 @@
             </div>
             <h2>Security Incidents and Data Breaches</h2>
             <div class="row">
-                <div class="col-7" id="worldmap">
+                <div class="col-7" data-intro="The world map shows the amount of computer security related incidents and breaches (CSRIB) that occurred over time by country. Hovering over the countries shows the amount of incidents for that particular country in the selected time period. Clicking a country updates the other three visualisations to show data for the selected country. The same functionality can be achieved by searching for a country in the search bar located in the top menu." id="worldmap" data-step="1">
                     <h3>By Country</h3>
                 </div>
-                <div class="col-5" id="barchart">
+                <div class="col-5" id="barchart" data-intro="The bar chart shows a more in depth view of the data, either worldwide or by country (as do the heat map and the pie chart). It takes the amount of incidents found in the world map and distributes them over the relevant industries."  data-step="2">
                     <h3 id="barchartTitle">By Industry</h3>
                 </div>
                 <div class="w-100">
                     <hr size="20px">
                 </div>
                 <div class="col-7">
-                    <div id="heatmap">
+                    <div id="heatmap" data-intro="The heat map shows an incident count of each industry and what cause led to the incident. For example: During 2015 there were 17 IT security incidents in the Health Care industry due to an error in the United Kingdom."  data-step="3">
                         <h3>By Industry &amp; Cause of Incident</h3>
                     </div>
                 </div>
-                <div class="col-5" id="piechart">
+                <div class="col-5" id="piechart" data-intro="The pie chart does not show data per industry. Instead, it aggregates all the data for a certain time period (worldwide or country) and shows which assets were involved in the incidents. For example, in 2015 39% of the incidents in the United States involved a server as the primary asset."  data-step="4">
                     <h3>By Targeted Asset</h3>
                 </div>
             </div>
@@ -186,6 +194,7 @@
     <footer class="text-center">
         <div>
             <span class="text-muted">by Akhil Medineni, Rahul Singh Thakur & Rishiraj Bhosale</span>
+
         </div>
     </footer>
 
